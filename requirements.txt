@@ -1,0 +1,12 @@
+# Core dependencies for Flask app and image generation
+flask==3.0.3
+werkzeug==3.0.4
+diffusers==0.30.3
+transformers==4.44.2
+google-generativeai==0.8.3
+pillow==10.4.0
+
+# Install PyTorch (will automatically use GPU if available)
+torch
+torchvision
+waitress==2.1.2

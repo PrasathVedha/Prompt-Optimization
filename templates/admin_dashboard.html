@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - PromptX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .brand {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .slogan {
+            color: #888;
+            font-size: 16px;
+            margin: 5px 0 20px;
+        }
+        .credit-requests {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .approve-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .approve-btn:hover {
+            background: #45a049;
+        }
+        .pending {
+            color: #ffd700;
+        }
+        .approved {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="PromptX Logo" class="logo">
+                <h1 class="title">⚡ ℙ𝕣𝕠𝕞𝕡𝕥 𝕏 ⚡ Admin</h1>
+                <p class="slogan">Where Words Become Pixels</p>
+            </div>
+            <a href="{{ url_for('logout') }}" style="color: white;">Logout</a>
+        </header>
+        
+        <div class="credit-requests">
+            <h2>Credit Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Requested Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in requests %}
+                    <tr>
+                        <td>{{ request[1] }}</td>
+                        <td>{{ request[2] }}</td>
+                        <td class="{{ request[3] }}">{{ request[3] }}</td>
+                        <td>{{ request[4] }}</td>
+                        <td>
+                            {% if request[3] == 'pending' %}
+                            <form action="{{ url_for('admin.approve_request', request_id=request[0]) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="approve-btn">Approve</button>
+                            </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

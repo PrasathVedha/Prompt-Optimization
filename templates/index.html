@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦Prompt X✦- AI Image Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav class="nav-bar">
+            <div class="nav-brand">✦ Prompt<span>X</span> ✦</div>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('profile') }}" class="nav-link">Profile</a>
+                <a href="{{ url_for('credits') }}" class="nav-link">Credits: <span id="userCredits">{{ credits }}</span></a>
+                <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+        <header>
+            <h1 class="title">✦ Prompt<span>X</span> ✦</h1>
+            <p class="subtitle">Turn your ideas into stunning AI-generated images.</p>
+        </header>
+        <div class="input-section">
+            <input type="text" id="promptInput" placeholder="Enter your creative prompt..." />
+
+            <select id="styleSelect" class="style-dropdown">
+                <option value="none">None</option>
+                <option value="realistic">Realistic</option>
+                <option value="cartoon">Cartoon</option>
+                <option value="anime">Anime</option>
+                <option value="watercolor">Watercolor</option>
+                <option value="oil_painting">Oil Painting</option>
+                <option value="digital_art">Digital Art</option>
+                <option value="minimalist">Minimalist</option>
+                <option value="abstract">Abstract</option>
+            </select>
+            <button id="generateBtn">Generate</button>
+        </div>
+        <div id="loading" style="display: none;">
+            <p>■ Generating Image... <span id="progress">0%</span></p>
+        </div>
+        <div id="output" style="display: none;">
+            <img id="generatedImage" src="" alt="Generated Image" style="max-width: 100%;">
+            <button id="downloadBtn" style="display: none;">Download</button>
+        </div>
+        <div class="credit-request" style="margin-top: 20px;">
+            <h3>Request More Credits</h3>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <input type="number" id="creditAmount" min="1" placeholder="Enter amount" style="width: 150px;">
+                <button id="requestCreditsBtn">Request Credits</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

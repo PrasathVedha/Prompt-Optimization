@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Styles -->
+    <defs>
+        <style type="text/css">
+            .component { fill: #f0f0f0; stroke: #333; stroke-width: 2; rx: 10; ry: 10; }
+            .arrow { stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+            .label { font-family: Arial; font-size: 14px; fill: #333; text-anchor: middle; }
+            .process-group { fill: #e6f3ff; stroke: #2196f3; stroke-width: 2; rx: 15; ry: 15; opacity: 0.3; }
+            .group-label { font-family: Arial; font-size: 16px; fill: #1976d2; font-weight: bold; }
+        </style>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+        </marker>
+    </defs>
+    
+    <!-- User Authentication Flow -->
+    <rect class="process-group" x="50" y="50" width="200" height="250"/>
+    <text class="group-label" x="150" y="80">Authentication</text>
+    <rect class="component" x="75" y="100" width="150" height="50"/>
+    <text class="label" x="150" y="130">Login/Register</text>
+    <rect class="component" x="75" y="200" width="150" height="50"/>
+    <text class="label" x="150" y="230">User Session</text>
+
+    <!-- Credit System -->
+    <rect class="process-group" x="300" y="50" width="200" height="250"/>
+    <text class="group-label" x="400" y="80">Credit System</text>
+    <rect class="component" x="325" y="100" width="150" height="50"/>
+    <text class="label" x="400" y="130">Credit Balance</text>
+    <rect class="component" x="325" y="200" width="150" height="50"/>
+    <text class="label" x="400" y="230">Credit Transaction</text>
+
+    <!-- Prompt Enhancement -->
+    <rect class="process-group" x="50" y="350" width="450" height="200"/>
+    <text class="group-label" x="275" y="380">Prompt Enhancement</text>
+    <rect class="component" x="75" y="400" width="150" height="50"/>
+    <text class="label" x="150" y="430">Input Validation</text>
+    <rect class="component" x="325" y="400" width="150" height="50"/>
+    <text class="label" x="400" y="430">Gemini Enhancement</text>
+
+    <!-- Style Application -->
+    <rect class="process-group" x="550" y="50" width="200" height="500"/>
+    <text class="group-label" x="650" y="80">Style Processing</text>
+    <rect class="component" x="575" y="100" width="150" height="50"/>
+    <text class="label" x="650" y="130">Style Selection</text>
+    <rect class="component" x="575" y="200" width="150" height="50"/>
+    <text class="label" x="650" y="230">Parameter Tuning</text>
+    <rect class="component" x="575" y="300" width="150" height="50"/>
+    <text class="label" x="650" y="330">Style Application</text>
+
+    <!-- Image Generation -->
+    <rect class="process-group" x="800" y="50" width="350" height="500"/>
+    <text class="group-label" x="975" y="80">Image Generation</text>
+    <rect class="component" x="825" y="100" width="150" height="50"/>
+    <text class="label" x="900" y="130">Stable Diffusion XL</text>
+    <rect class="component" x="825" y="200" width="150" height="50"/>
+    <text class="label" x="900" y="230">Generation Process</text>
+    <rect class="component" x="825" y="300" width="150" height="50"/>
+    <text class="label" x="900" y="330">Post-processing</text>
+    <rect class="component" x="825" y="400" width="150" height="50"/>
+    <text class="label" x="900" y="430">Result Delivery</text>
+
+    <!-- Connecting Arrows -->
+    <path class="arrow" d="M225 125 H300"/>
+    <path class="arrow" d="M225 225 H300"/>
+    <path class="arrow" d="M475 225 H550"/>
+    <path class="arrow" d="M225 425 H300"/>
+    <path class="arrow" d="M500 425 H550"/>
+    <path class="arrow" d="M750 225 H800"/>
+    <path class="arrow" d="M750 325 H800"/>
+
+    <!-- Legend -->
+    <rect x="50" y="600" width="1100" height="150" fill="#f8f9fa" stroke="#dee2e6" rx="10" ry="10"/>
+    <text x="100" y="640" font-family="Arial" font-size="18" fill="#333" font-weight="bold">Legend</text>
+    <rect x="100" y="660" width="20" height="20" class="component"/>
+    <text x="130" y="675" font-family="Arial" font-size="14" fill="#333">Process Component</text>
+    <rect x="300" y="660" width="20" height="20" class="process-group"/>
+    <text x="330" y="675" font-family="Arial" font-size="14" fill="#333">Process Group</text>
+    <line x1="500" y1="670" x2="550" y2="670" class="arrow"/>
+    <text x="580" y="675" font-family="Arial" font-size="14" fill="#333">Data Flow</text>
+
+    <!-- Title -->
+    <text x="600" y="780" text-anchor="middle" fill="#2d3748" font-family="Arial" font-size="24" font-weight="bold">PromptX Image Generation Pipeline</text>
+</svg>
