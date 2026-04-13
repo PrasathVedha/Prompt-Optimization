@@ -1,7 +1,7 @@
 # PromptX Documentation
 
 ## Overview
-PromptX is an advanced AI image generation platform that combines prompt enhancement with style-based generation capabilities. The system provides a robust pipeline for creating high-quality AI-generated images through an intuitive user interface.
+Prompt Opti is an advanced AI image generation platform that combines prompt enhancement with style-based generation capabilities. The system provides a robust pipeline for creating high-quality AI-generated images through an intuitive user interface.
 
 ## System Architecture
 
